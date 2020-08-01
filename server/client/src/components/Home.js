@@ -1,10 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    return (<div>
-        <h1>The Home of Holes</h1>
-        <p>Please login to continue</p>
-    </div>)
-}
+  return (
+    <div>
+      <Link to='/signup'>
+        <button>Sign up</button>
+      </Link>
+      <Link to='/login'>
+        <button>Login</button>
+      </Link>
+    </div>
+  );
+};
 
 export default Home;

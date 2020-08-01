@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1:27017/reg-form-api', {
-    useNewUrlParser: true,
-    useCreateIndex: true
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
 });
 
 module.exports = {
-    mongoose
+  mongoose,
 };

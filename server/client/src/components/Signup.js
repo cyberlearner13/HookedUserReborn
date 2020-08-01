@@ -1,25 +1,30 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import './Signup.css';
 
-const Login = () => {
-  //
+const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const clearForm = (e) => {
+  const signup = (e) => {
     e.preventDefault();
-    setUsername('');
-    setPassword('');
+    axios.post('http://localhost:4000/users/signup', {
+      username,
+      password,
+    });
   };
-  const login = (e) => {
-    e.preventDefault();
-  };
+
   return (
-    <Fragment>
+    <div>
+      <Link to='/'>
+        <button>Back to Home</button>
+      </Link>
+
       <div className='form'>
-        <form className='login-form'>
-          <span>Login Form</span>
+        <form className='signup-form'>
+          <span>Signup Form</span>
           <div className='username'>
             <label htmlFor='username'>Username</label>
             <input
@@ -36,21 +41,23 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          <div className='password'>
+            <label htmlFor='confirm_password'>Confirm Password</label>
+            <input
+              type='password'
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
           <div className='form-actions'>
-            <button className='cancel' onClick={(e) => clearForm(e)}>
-              Cancel
-            </button>
-            <button className='submit' onClick={(e) => login(e)}>
+            <button className='cancel'>Cancel</button>
+            <button className='submit' onClick={(e) => signup(e)}>
               Submit
             </button>
           </div>
         </form>
       </div>
-      <Link to='/'>
-        <button>Back to Home</button>
-      </Link>
-    </Fragment>
+    </div>
   );
 };
 
-export default Login;
+export default Signup;

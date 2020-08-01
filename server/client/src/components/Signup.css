@@ -5,6 +5,7 @@
     margin-top: 5vh;
 }
 
+.signup-form,
 .login-form {
     border: 1px solid #888;
     border-radius: 5px;
@@ -13,20 +14,32 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 25em;
+}
+
+.signup-form {
+    height: 40em;
+}
+
+
+.login-form {
+    height: 30em;
+}
+
+.signup-form span {
+    font-size: 2.5em;
 }
 
 .login-form span {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .username,
 .password {
     display: flex;
-    width: 20vw;
+    width: 30vw;
     justify-content: space-between;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .form-actions {
@@ -54,13 +67,14 @@
 }
 
 .cancel {
-    background: #EFEFBB;
-    background: -webkit-linear-gradient(to bottom, #D4D3DD, #EFEFBB);
-    background: linear-gradient(to bottom, #D4D3DD, #EFEFBB);
+    background: #d66113;
+    background: -webkit-linear-gradient(to bottom, #e9c0d9, #d66113);
+    background: linear-gradient(to bottom, #e9c0d9, #d66113);
 }
 
 input {
-    height: 3em;
+    height: 2em;
     outline: none;
     padding-left: 0.5em;
+    width: 20vw;
 }
